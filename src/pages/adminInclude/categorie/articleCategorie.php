@@ -1,5 +1,7 @@
 <?php	
 
+require "../../src/fonctions/articleDbFonction.php";
+
 if(isset($_SESSION["user"]["role"]) && $_SESSION["user"]["role"] == "admin"){
     if(isset($_POST["type"]) && !empty($_POST["type"])){
         $typeArticle = htmlspecialchars($_POST["type"]) ;

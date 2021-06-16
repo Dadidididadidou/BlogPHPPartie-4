@@ -27,7 +27,7 @@
                 if($result["mdp"] == $sel){
                     $_SESSION["connect"] = true;
                     $_SESSION["user"] = [
-                        "id" => $result["userId"],
+                        "id" => $result["userid"],
                         "nom" => $result["nom"],
                         "prenom" => $result["prenom"],
                         "photo" => $result["avatar"],
@@ -58,86 +58,16 @@
         $requete = $bdd->prepare("UPDATE users 
                                 SET avatar = ? 
                                 WHERE userId = ?");
-        $requete->execute(array($fichier,$_SESSION["userId"]["id"]));
+        $requete->execute(array($fichier,$_SESSION["user"]["id"]));
         $requete->closeCursor();
     }
 
-    function getHardCategorie(){
-        $bdd=dbAccess();
-        $requete = $bdd->query("SELECT * FROM hardware") or die(print_r($requete->errorInfo(),true));
+    
 
-        while($donnée = $requete->fetch()){
-            $listHardCategorie[] = $donnée;
-        }
-        $requete->closeCursor();
-        
-        return $listHardCategorie;
-    }
+    
 
-    function addHardCategorie($console){  
-        $bdd=dbAccess();
-        $requete = $bdd->prepare("INSERT INTO hardware(console) VALUES(?)");
-        $requete->execute(array($console)) or die(print_r($requete->errorInfo(),TRUE));
-        $requete->closeCursor();
-    }
+    
 
-    function deleteHardCategorie($hardId){
-        $bdd=dbAccess();
-        $requete = $bdd->prepare("DELETE FROM hardware WHERE hardId = ?");
-        $requete->execute(array($hardId)) or die(print_r($requete->errorInfo(),TRUE));
-        $requete->closeCursor();
-    }
-
-    function getCategorie(){
-        $bdd=dbAccess();
-        $requete = $bdd->query("SELECT * FROM categorie") or die(print_r($requete->errorInfo(),true));
-
-        while($donnée = $requete->fetch()){
-            $listCategorie[] = $donnée;
-        }
-        $requete->closeCursor();
-        
-        return $listCategorie;
-    }
-
-    function addTypeArticle($typeArticle){  
-        $bdd=dbAccess();
-        $requete = $bdd->prepare("INSERT INTO categorie(nomCategorie) VALUES(?)");
-        $requete->execute(array($typeArticle)) or die(print_r($requete->errorInfo(),TRUE));
-        $requete->closeCursor();
-    }
-
-    function deleteTypeArticle($deleteType){
-        $bdd=dbAccess();
-        $requete = $bdd->prepare("DELETE FROM categorie WHERE categorieid = ?");
-        $requete->execute(array($deleteType)) or die(print_r($requete->errorInfo(),TRUE));
-        $requete->closeCursor();
-    }
-
-    function getGameCategorie(){
-        $bdd=dbAccess();
-        $requete = $bdd->query("SELECT * FROM gamecategory") or die(print_r($requete->errorInfo(),true));
-
-        while($donnée = $requete->fetch()){
-            $listGameCat[] = $donnée;
-        }
-        $requete->closeCursor();
-        
-        return $listGameCat;
-    }
-
-    function addGameCategorie($gameCat){  
-        $bdd=dbAccess();
-        $requete = $bdd->prepare("INSERT INTO gamecategory(genre) VALUES(?)");
-        $requete->execute(array($gameCat)) or die(print_r($requete->errorInfo(),TRUE));
-        $requete->closeCursor();
-    }
-
-    function deleteGameCategorie($gameCatId){
-        $bdd=dbAccess();
-        $requete = $bdd->prepare("DELETE FROM gamecategory WHERE gameCategoryid = ?");
-        $requete->execute(array($gameCatId)) or die(print_r($requete->errorInfo(),TRUE));
-        $requete->closeCursor();
-    }
-
+  
+    
 ?>

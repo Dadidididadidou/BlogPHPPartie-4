@@ -1,5 +1,6 @@
 <?php	
 
+
 if(isset($_SESSION["user"]["role"]) && $_SESSION["user"]["role"] == "admin"){
     if(isset($_POST["gameCat"]) && !empty($_POST["gameCat"])){
         $gameCat = htmlspecialchars($_POST["gameCat"]) ;

@@ -2,6 +2,7 @@
 <?php 
 
 
+
     if(isset($_SESSION["user"]["role"]) && $_SESSION["user"]["role"] == "admin"){
         if(isset($_POST["hardware"]) && !empty($_POST["hardware"])){
             $console = htmlspecialchars($_POST["hardware"]) ;

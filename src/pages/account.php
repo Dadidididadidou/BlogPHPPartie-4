@@ -17,7 +17,6 @@
         exit();
     }
 
-    
 ?>
 
 <section id="account">
