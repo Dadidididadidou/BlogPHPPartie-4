@@ -40,11 +40,11 @@ if(isset($_SESSION["user"]["role"]) && $_SESSION["user"]["role"] == "admin"){
                 
                 <table class="mlr-a mt-3 p-1" id="typeJeux">
 
-                    <tr><td><input type="text" name="nom" placeholder="Nom du Jeux"></td></tr>
-                    <tr><td><input type="text" name="developpeur" placeholder="développeur"></td></tr>
-                    <tr><td><input type="text" name="editeur" placeholder="Editeur"></td></tr>
-                    <tr><td><input type="date" name="dateDeSortie"></td></tr>
-                    <tr><td><input type="text" name="cover" placeholder="Adresse cover"></td></tr>
+                    <tr><td><input type="text" name="nom" placeholder="Nom du Jeux" required></td></tr>
+                    <tr><td><input type="text" name="developpeur" placeholder="développeur" required></td></tr>
+                    <tr><td><input type="text" name="editeur" placeholder="Editeur" required></td></tr>
+                    <tr><td><input type="date" name="dateDeSortie" required></td></tr>
+                    <tr><td><input type="text" name="cover" placeholder="Adresse cover" required></td></tr>
                     <tr><td><select name="hardware" id="hardware">
                         <?php
                         foreach($listeHard as $value){
