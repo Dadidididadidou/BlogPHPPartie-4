@@ -1,10 +1,7 @@
-sanatize string dans account.php avant checkvalidate
-eventuelement fusionner validateUser et delValid dans dbFonctions.php
-
-- les commentaire fonctionnes par articles
-- sur l'index les article mis en avant sont ceux qui ont été mis en avant uniquement
 
 
-- Validation de compte par email  
-- report un commentaire + le delete ou le valider dans admin
-- Ban un user, message l'averti qu'il est ban quand il tente de se connecté
+-J'ai rajouter les commentaires 
+-la possibilité de reporté les commentaires
+-pouvoir gerer les commentairez qui ont été report dans la page Admin et pouvoir valider ou supprimé le commentaire (la validation dit que le message est ok)
+-Code de  validation envoyé par Email (validation), le code dois etre entré dans la page Account, un compte non validé ne pourra pas poster de commentaire
+- possibilité de banir un user dans admin, un user banni qui essaie de se connecté recevera un message qui lui dit qu'il est banni
