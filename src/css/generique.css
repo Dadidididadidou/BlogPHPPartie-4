@@ -15,6 +15,10 @@ h1, h2, h3, h4, h5, h6{
     text-transform: uppercase;
 }
 
+a{
+    text-decoration: none;
+}
+
 /* COULEUR TEXTE */
 .tc-r a{
     color: #FF0036;
@@ -26,6 +30,10 @@ h1, h2, h3, h4, h5, h6{
 
 .tc-o a{
     color: orange;
+}
+
+.red{
+    color: #FF0036;
 }
 
 
@@ -127,4 +135,14 @@ h1, h2, h3, h4, h5, h6{
 
 .tstRed{
     -webkit-text-stroke: 1px #FF0036;
+}
+
+/* Flex Order */
+
+.fo-1{
+    order: 1;
+}
+
+.fo-2{
+    order: 2;
 }
