@@ -40,6 +40,7 @@
     }
 
     $listeMescommentaires = getMyCommentaire($_SESSION["user"]["id"]);
+    
 ?>
 
 <section id="account">
@@ -111,27 +112,29 @@
                 if($_SESSION["user"]["role"] == "auteur" || $_SESSION["user"]["role"] == "admin"): ?>
             <h2>Vos Articles</h2>
 
-            <?php if(count($listeMesArticles) == 0){echo"<p>pas d'articles</p>";} ?>
+            <?php if(!isset($listeMesArticles) == 0){echo"<p>pas d'articles</p>";} ?>
             
             <!-- LISTE DES ARTICLES -->
             <?php 
+            if(isset($listeMesArticles)){
             foreach($listeMesArticles as $value){
             ?>
             <p><?=$value["titre"] ?> // le: <?=$value["date"] ?> </p>
             
 
-            <?php }endif; ?>
+            <?php }}endif; ?>
             <h2>Vos Commentaires</h2>
-            <?php if(count($listeMescommentaires) == 0){echo"<p>pas de commentaires</p>";} ?>
+            <?php if($listeMescommentaires == NULL){echo"<p>pas de commentaires</p>";} ?>
             
             <!-- LISTE DES COMMENTAIRES -->
             <?php 
+            if(isset($listeMescommentaires) && $listeMescommentaires !=NULL){
             foreach($listeMescommentaires as $value){
             ?>
             <p><?=$value["contenu"] ?> // le: <?=$value["dateCommentaire"] ?> </p>
 
             <?php 
-            } 
+            } }
             ?>
 
 

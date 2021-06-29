@@ -1,0 +1,10 @@
+sanatize string dans account.php avant checkvalidate
+eventuelement fusionner validateUser et delValid dans dbFonctions.php
+
+- les commentaire fonctionnes par articles
+- sur l'index les article mis en avant sont ceux qui ont été mis en avant uniquement
+
+
+- Validation de compte par email  
+- report un commentaire + le delete ou le valider dans admin
+- Ban un user, message l'averti qu'il est ban quand il tente de se connecté

@@ -116,10 +116,15 @@ function getMyCommentaire($userId){
     $requete = $bdd->prepare("SELECT contenu,dateCommentaire FROM commentaires
                                 WHERE auteurId = ?");
     $requete->execute(array($userId)) or die(print_r($requete->errorInfo(), TRUE));
-    while($données = $requete->fetch()){
-        $listCommentaire[] = $données;
+    
+    if($requete->fetch() != NULL){
+        while($données = $requete->fetch()){
+            $listCommentaire[] = $données;
+        }
+    }else{
+        $listCommentaire = NULL;
     }
-
+    
     return $listCommentaire;
 }
 
